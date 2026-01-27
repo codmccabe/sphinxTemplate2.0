@@ -100,7 +100,7 @@ sphinxTemplate2.0/
 ├── doc/
 │   ├── _static/
 │   │   ├── custom_accessibility.css # Custom accessibility styles
-│   │   └── lightbox_init.js         # Lightbox functionality (optional)
+│   │   └── lightbox_init.js         # Lightbox functionality
 │   ├── chapter1/
 │   │   ├── c1.rst                   # Chapter 1 toctree
 │   │   ├── 11.md through 16.md      # Chapter 1 sections
@@ -155,6 +155,13 @@ Create mathematical diagrams with TikZ:
 \end{tikzpicture}
 ```
 ````
+
+### Clickable TikZ Diagrams
+
+TikZ diagrams are clickable! They open in a fullscreen lightbox viewer:
+- **Click** the image to view it fullscreen
+- **Navigate:** Use arrow keys or swipe on mobile
+- **Close:** Press `Esc` or click outside
 
 ### Collapsible Content
 
@@ -224,6 +231,7 @@ Always include descriptive alt text:
 - **sphinx_accessibility** - Accessibility checks
 - **sphinx_tabs** - Tabbed content
 - **sphinx_togglebutton** - Collapsible sections
+- **sphinx_copybutton** - Copy button for code blocks
 
 ## Deployment
 
@@ -329,7 +337,7 @@ sphinx-build -T -W --keep-going doc _build/html
 
 ### TikZ Diagrams Not Showing
 
-- Install system dependency: `sudo apt-get install texlive-latex-base`
+- Install system dependency: `sudo apt-get install texlive-latex-base texlive-latex-extra pdf2svg`
 - Check TikZ syntax for errors
 - Rebuild documentation
 
@@ -365,6 +373,7 @@ Core dependencies:
 - sphinx-accessibility
 - sphinx-tabs
 - sphinx-togglebutton
+- sphinx-copybutton
 
 See `requirements.txt` for complete list and versions.
 
