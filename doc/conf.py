@@ -1,7 +1,7 @@
 # Configuration file for Sphinx documentation builder
 
 project = 'Math Textbook'
-copyright = '2024'
+copyright = '2026'
 author = ''
 release = '1.0.0'
 
@@ -18,6 +18,7 @@ extensions = [
     'sphinx_accessibility',
     'sphinx_tabs.tabs',
     'sphinx_togglebutton',
+    'sphinx_copybutton',
     'sphinxext.opengraph',
     'sphinxcontrib.tikz',
 ]
@@ -113,7 +114,7 @@ tikz_latex_engine = 'pdflatex'
 # Ensure white background
 tikz_latex_preamble += r'\pagecolor{white}\color{black}'
 
-# Custom CSS for improved accessibility
+# Custom CSS and JS for improved accessibility and lightbox
 def setup(app):
     app.add_css_file('custom_accessibility.css')
     app.add_css_file('https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css')

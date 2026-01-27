@@ -4,7 +4,6 @@
 body {
     font-size: 16px;
     line-height: 1.7;
-    color: #333;
 }
 
 /* Improved contrast for better visibility */
@@ -221,36 +220,5 @@ figcaption {
     
     h1, h2, h3, h4 {
         page-break-after: avoid;
-    }
-}
-
-/* Dark mode support */
-@media (prefers-color-scheme: dark) {
-    body {
-        color: #e0e0e0;
-        background-color: #1a1a1a;
-    }
-    
-    .math-block {
-        background-color: #2a2a2a;
-        border-left-color: #66b3ff;
-    }
-    
-    .highlight {
-        background-color: #2a2a2a;
-        border-color: #444;
-    }
-    
-    code {
-        background-color: #2a2a2a;
-        color: #e0e0e0;
-    }
-    
-    a {
-        color: #66b3ff;
-    }
-    
-    a:visited {
-        color: #cc99ff;
     }
 }

@@ -1,5 +1,5 @@
 // Initialize GLightbox for TikZ diagram enlargement
-document.addEventListener('DOMContentLoaded', function() {
+function initGLightbox() {
   // Find all TikZ-generated images and make them clickable
   const tikzImages = document.querySelectorAll('img[src*="tikz"]');
   
@@ -17,14 +17,23 @@ document.addEventListener('DOMContentLoaded', function() {
     img.parentNode.replaceChild(link, img);
   });
   
-  // Initialize GLightbox with basic features
-  const lightbox = GLightbox({
-    selector: '[data-glightbox]',
-    openEffect: 'fade',
-    closeEffect: 'fade',
-    width: '95vw',
-    height: '95vh',
-    touchNavigation: true,
-    keyboardNavigation: true,
-  });
-});
+  // Initialize GLightbox
+  if (typeof GLightbox !== 'undefined') {
+    const lightbox = GLightbox({
+      selector: '[data-glightbox]',
+      openEffect: 'fade',
+      closeEffect: 'fade',
+      width: '95vw',
+      height: '95vh',
+      touchNavigation: true,
+      keyboardNavigation: true,
+    });
+  }
+}
+
+// Wait for page to fully load
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initGLightbox);
+} else {
+  initGLightbox();
+}
